@@ -13,7 +13,7 @@ function pushButton1() {
     let optiontext= option.value;
     
     let resurl=(`${REQUEST_URL}?&userid=${userid}&displayname=${displayname}&url=${urltext}&option=${optiontext}`)
-    let res_text=(`${displayname}&${urltext}&已收到您的訂單`)
+    let res_text=(`${displayname}${urltext}已收到您的訂單`)
          alert(res_text);
         const res = fetch(resurl);
         console.log(res);
