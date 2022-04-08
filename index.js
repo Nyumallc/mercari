@@ -17,7 +17,7 @@ function pushButton1() {
         let res_text=(`${displayname}${urltext}已收到您的訂單`)
     }else{
         let res_text=(`還沒有完成登入。不能訂單。`)
-}
+    }
     
          alert(res_text);
         const res = fetch(resurl);
