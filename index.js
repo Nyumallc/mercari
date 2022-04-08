@@ -13,20 +13,24 @@ function pushButton1() {
     let optiontext= option.value;
     
     let resurl=(`${REQUEST_URL}?&userid=${userid}&displayname=${displayname}&url=${urltext}&option=${optiontext}`)
-    let res_text=(`${displayname}${urltext}已收到您的訂單`)
-
-    
-         alert(res_text);
+    if (userid.length > 10) {
+        let res_text=(`${displayname}${urltext}已收到您的訂單`)
         const res = fetch(resurl);
-        console.log(res);
-        liff.sendMessages([{
-            'type': 'text',
-            'text': urltext + "の注文をリクエストしました。"
-          }]).then(function() {
-            // document.getElementById('log').value += 'sendMessagesText completed\n';
-          }).catch(function(error) {
-            // document.getElementById('log').value += 'sendMessagesText()=' + error + '\n';
-          });
+    }else{
+        let res_text=(`還沒有完成登入。不能訂單。`)
+    }
+//     let res_text=(`${displayname}${urltext}已收到您的訂單`)
+    alert(res_text);
+//         const res = fetch(resurl);
+//         console.log(res);
+//         liff.sendMessages([{
+//             'type': 'text',
+//             'text': urltext + "の注文をリクエストしました。"
+//           }]).then(function() {
+//             // document.getElementById('log').value += 'sendMessagesText completed\n';
+//           }).catch(function(error) {
+//             // document.getElementById('log').value += 'sendMessagesText()=' + error + '\n';
+//           });
     };
 
 
