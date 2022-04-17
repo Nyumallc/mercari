@@ -13,26 +13,25 @@ function pushButton1() {
     let optiontext= option.value;
     
     let resurl=(`${REQUEST_URL}?&userid=${userid}&displayname=${displayname}&url=${urltext}&option=${optiontext}`)
-    const res = fetch(resurl);
     let res_text=(`${displayname}${urltext}已收到您的訂單`)
-    alert(res_text);
-//         const res = fetch(resurl);
-//         console.log(res);
-//         liff.sendMessages([{
-//             'type': 'text',
-//             'text': urltext + "の注文をリクエストしました。"
-//           }]).then(function() {
-//             // document.getElementById('log').value += 'sendMessagesText completed\n';
-//           }).catch(function(error) {
-//             // document.getElementById('log').value += 'sendMessagesText()=' + error + '\n';
-//           });
+         alert(res_text);
+        const res = fetch(resurl);
+        console.log(res);
+        liff.sendMessages([{
+            'type': 'text',
+            'text': urltext + "の注文をリクエストしました。"
+          }]).then(function() {
+            // document.getElementById('log').value += 'sendMessagesText completed\n';
+          }).catch(function(error) {
+            // document.getElementById('log').value += 'sendMessagesText()=' + error + '\n';
+          });
     };
 
 
 function pushButton2() {
     let user_id = document.getElementById("user_id");
     let userid = user_id.innerHTML;
-    location.href=(`https://share.streamlit.io/nyumallc/streamlit_db/main/streamlit_db.py?f_num=mercari&userid=${userid}`)
+    location.href=(`https://warm-oasis-25284.herokuapp.com/mercari/${userid}`)
      
     };
 
